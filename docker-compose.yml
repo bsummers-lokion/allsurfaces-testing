@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  astro:
+    build: .
+    ports:
+      - "4321:4321"
+    networks:
+      - default
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=${TRAEFIK_DOCKER_NETWORK}"
+      - "traefik.group=${TRAEFIK_GROUP}"
+      - "traefik.http.routers.allsurfaces-testing.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.allsurfaces-testing.entrypoints=websecure"
+      - "traefik.http.routers.allsurfaces-testing.tls=true"
+      - "traefik.http.services.allsurfaces-testing.loadbalancer.server.port=4321"
+
+networks:
+  proxy:
+    external: true
