@@ -10,7 +10,19 @@ TRAEFIK_GROUP ?= proxy
 DOMAIN ?= allsurfaces-testing.development.computer
 PORT ?= 4321
 
-.PHONY: up down clean build rebuild respawn env config
+.PHONY: up down clean build rebuild respawn env config help
+
+help:
+	@echo "Available targets:"
+	@echo "  up        - Start the Astro/Starlight server"
+	@echo "  down      - Stop the Astro/Starlight server"
+	@echo "  clean     - Clean up containers and images"
+	@echo "  build     - Build the Astro/Starlight image"
+	@echo "  rebuild   - Clean and build the Astro/Starlight image"
+	@echo "  respawn   - Down, clean, build, and up the Astro/Starlight server"
+	@echo "  env       - Create .env file from .env.example (alias: config)"
+	@echo "  config    - Create .env file from .env.example"
+	@echo "  help      - Show this help message"
 
 up:
 	@echo "Starting Astro/Starlight server..."
