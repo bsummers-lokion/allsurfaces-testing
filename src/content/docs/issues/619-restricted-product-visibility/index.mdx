@@ -1,0 +1,30 @@
+---
+title: "Issue #619: Restricted Product Visibility"
+description: "Testing the restricted product visibility feature for AllSurfaces OroCommerce."
+---
+
+# Issue #619: Restricted Product Visibility
+
+This page documents the testing of the restricted product visibility feature for AllSurfaces OroCommerce.
+
+## Overview
+
+The restricted product visibility feature allows products to be hidden from search results based on their P21 sellable status. When the feature is enabled, products with `restricted_visibility = true` and `p21_sellable = false` are hidden from search results.
+
+## Test Results
+
+### Product Visible (Feature OFF)
+
+The product QEP82509BR is visible when the feature is OFF.
+
+![Product visible](/screenshots/screenshot-product-visible.png)
+
+### Product Hidden (Feature ON)
+
+The product QEP82509BR is hidden when the feature is ON.
+
+![Product hidden](/screenshots/screenshot-product-hidden.png)
+
+## Conclusion
+
+The restricted product visibility feature is working as expected. The product QEP82509BR is visible when the feature is OFF and hidden when the feature is ON.
