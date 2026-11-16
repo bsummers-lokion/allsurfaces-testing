@@ -52,5 +52,13 @@ config:
 		cp .env.example .env; \
 		echo ".env file created."; \
 	else \
-		echo ".env file already exists."; \
+		echo ".env file already exists. Updating with new keys from .env.example..."; \
+		while IFS='=' read -r key value; do \
+			if [ -n "$$key" ] && [ "$$key" != "#$$key" ] && [ "$$key" != " " ]; then \
+				if ! grep -q "^$$key=" .env; then \
+					echo "$$key=$$value" >> .env; \
+					echo "Added $$key to .env"; \
+				fi; \
+			fi; \
+		done < .env.example; \
 	fi
