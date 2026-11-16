@@ -8,6 +8,7 @@ endif
 TRAEFIK_DOCKER_NETWORK ?= proxy
 TRAEFIK_GROUP ?= proxy
 DOMAIN ?= allsurfaces-testing.development.computer
+PORT ?= 4321
 
 .PHONY: up down clean build rebuild respawn env config
 
