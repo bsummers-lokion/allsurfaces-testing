@@ -15,6 +15,7 @@ This repository contains testing artifacts for AllSurfaces OroCommerce.
 2. Add a README or table of contents file that describes the issue and the artifacts
 3. Add screenshots and other artifacts to the issue directory
 4. Update the index page to link to the new issue documentation
+5. Link to the GitHub issue as the very first paragraph of content on each page
 
 ## Example
 
