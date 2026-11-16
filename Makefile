@@ -26,19 +26,19 @@ help:
 
 up:
 	@echo "Starting Astro/Starlight server..."
-	docker compose up -d
+	@docker compose up -d
 
 down:
 	@echo "Stopping Astro/Starlight server..."
-	docker compose down
+	@docker compose down
 
 clean:
 	@echo "Cleaning up containers and images..."
-	docker compose down --rmi local --volumes
+	@docker compose down --rmi local --volumes
 
 build:
 	@echo "Building Astro/Starlight image..."
-	docker compose build
+	@docker compose build
 
 rebuild: clean build
 
@@ -48,7 +48,7 @@ env: config
 
 config:
 	@echo "Creating .env file from .env.example..."
-	if [ ! -f .env ]; then \
+	@if [ ! -f .env ]; then \
 		cp .env.example .env; \
 		echo ".env file created."; \
 	else \
